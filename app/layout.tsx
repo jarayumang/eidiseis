@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Rubik as FontSans } from "next/font/google"
 import '@/styles/globals.css'
-import Sidebar from '@/components/sidenav'
 
 import { cn } from "@/lib/utils"
+import { AuthContextProvider } from '@/context/AuthContext'
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,12 +27,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "flex flex-row min-h-screen bg-blackground font-sans antialiased",
+          "flex flex-row h-screen w-screen bg-blackground font-sans antialiased",
           fontSans.variable
         )}
       >
-        <Sidebar />
-        {children}
+        <AuthContextProvider>
+          {children}
+        </AuthContextProvider>
       </body>
     </html>
   )
