@@ -3,8 +3,7 @@
 import React from 'react';
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowTrendUp, faBookOpen, faDatabase, faGear, faHouse, faInbox, faNoteSticky, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { CandlestickChart, Kanban, LayoutPanelLeft, Library, LogOut, MessageCircle, Settings, StickyNote } from 'lucide-react';
 
 const Sidebar: React.FC = () => {
   const router = useRouter();
@@ -20,16 +19,16 @@ const Sidebar: React.FC = () => {
         priority
       />
       <div className='flex flex-col'>
-        <FontAwesomeIcon icon={faHouse} className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/dashboard')} />
-        <FontAwesomeIcon icon={faBookOpen} className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/library')} />
-        <FontAwesomeIcon icon={faInbox} className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/messages')} />
-        <FontAwesomeIcon icon={faNoteSticky} className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/notes')} />
-        <FontAwesomeIcon icon={faDatabase} className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/project')} />
-        <FontAwesomeIcon icon={faArrowTrendUp} className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/stocks')} />
-        <FontAwesomeIcon icon={faGear} className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/settings')} />
+        <LayoutPanelLeft  className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/dashboard')} />
+        <Library className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/library')} />
+        <MessageCircle className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/messages')} />
+        <StickyNote className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/notes')} />
+        <Kanban className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/project')} />
+        <CandlestickChart className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/stocks')} />
+        <Settings className='w-7 h-7 text-white m-5 cursor-pointer' type="button" onClick={() => router.push('/settings')} />
       </div>
       <div>
-        <FontAwesomeIcon icon={faRightFromBracket} className='w-7 h-7 text-white m-5' />
+        <LogOut className='w-7 h-7 text-white m-5' />
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
 // pages/signup.tsx
+"use client"
+
 import React, { useState, FormEvent } from "react";
 import signUp from "@/firebase/auth/signup";
 import { useRouter } from 'next/router';

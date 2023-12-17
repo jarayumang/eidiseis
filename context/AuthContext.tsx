@@ -26,7 +26,6 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({
   children,
 }: AuthContextProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const auth = getAuth(firebase_app);
@@ -37,7 +36,6 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({
       } else {
         setUser(null);
       }
-      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -45,7 +43,7 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({
 
   return (
     <AuthContext.Provider value={{ user }}>
-      {loading ? <div>Loading...</div> : children}
+      {children}
     </AuthContext.Provider>
   );
 };

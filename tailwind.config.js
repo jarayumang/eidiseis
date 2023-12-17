@@ -18,9 +18,11 @@ module.exports = {
       },
     },
     extend: {
-      backgroundColor: {
-        blackground: "#13121D",
-        line: "#1f1e30",
+      colors: {
+        whitish: "#DDE6ED",
+        greyish: "#9DB2BF",
+        blueish: "#526D82",
+        blackish: "#27374D",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
@@ -42,4 +44,5 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  safelist: ['bg-blackish, text-blackish'],
 }
